@@ -342,7 +342,23 @@ function showToast(message, iconName = 'sparkles') {
   }, 3200);
 }
 
-/* --- Contact Form Submission Handler --- */
+/* --- Direct Gmail Compose Shortcut --- */
+function handleDirectGmailClick() {
+  const name = document.getElementById('contactName')?.value.trim() || '';
+  const email = document.getElementById('contactEmail')?.value.trim() || '';
+  const subject = document.getElementById('contactSubject')?.value.trim() || '';
+  const message = document.getElementById('contactMessage')?.value.trim() || '';
+
+  const mailSubject = subject ? `[Portfolio Message] ${subject}` : `[Portfolio Message] Inquiry for Ananya Jain`;
+  let mailBody = `Hello Ananya,\n\n`;
+  if (message) mailBody += `${message}\n\n`;
+  if (name || email) mailBody += `Best regards,\n${name} ${email ? `<${email}>` : ''}`;
+
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=ananyajain729@gmail.com&su=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+  window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+}
+
+/* --- Contact Form Submission Handler (Real-Time Delivery & Fallback) --- */
 async function handleContactSubmit(event) {
   event.preventDefault();
 
@@ -351,10 +367,19 @@ async function handleContactSubmit(event) {
   const subject = document.getElementById('contactSubject').value.trim();
   const message = document.getElementById('contactMessage').value.trim();
   const btn = document.getElementById('submitFormBtn');
+  const statusBox = document.getElementById('contactFormStatus');
 
   if (!name || !email || !message) {
     showToast('Please fill out all required fields.', 'alert-circle');
     return;
+  }
+
+  // Pre-open fallback tab synchronously on user click to avoid popup blocker
+  let fallbackTab = null;
+  try {
+    fallbackTab = window.open('about:blank', '_blank');
+  } catch (e) {
+    console.warn('Popup blocked, will use direct redirect if needed.');
   }
 
   // Button loading state
@@ -365,14 +390,13 @@ async function handleContactSubmit(event) {
   `;
   btn.disabled = true;
 
+  if (statusBox) {
+    statusBox.style.display = 'none';
+  }
+
   const mailSubject = subject ? `[Portfolio Message] ${subject}` : `[Portfolio Message] New inquiry from ${name}`;
   const mailBody = `Hello Ananya,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-
-  // Helper to open Gmail Web Compose fallback
-  const openGmailFallback = () => {
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=ananyajain729@gmail.com&su=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
-    window.open(gmailUrl, '_blank', 'noopener,noreferrer');
-  };
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=ananyajain729@gmail.com&su=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
 
   try {
     const response = await fetch('https://formsubmit.co/ajax/ananyajain729@gmail.com', {
@@ -394,53 +418,107 @@ async function handleContactSubmit(event) {
     const data = await response.json();
 
     if (data.success === 'true' || data.success === true) {
+      // SUCCESS: FormSubmit delivered the email directly in real time
+      if (fallbackTab && !fallbackTab.closed) {
+        fallbackTab.close();
+      }
+
       btn.innerHTML = `
         <i data-lucide="check" style="width: 16px; height: 16px;"></i>
-        <span>Message Sent Directly!</span>
+        <span>Message Delivered!</span>
       `;
       initLucideIcons();
 
-      showToast(`Thank you, ${name}! Your message was delivered straight to Ananya's inbox.`, 'check');
+      if (statusBox) {
+        statusBox.style.display = 'block';
+        statusBox.style.background = 'rgba(46, 125, 50, 0.1)';
+        statusBox.style.color = '#2E7D32';
+        statusBox.style.border = '1px solid rgba(46, 125, 50, 0.3)';
+        statusBox.innerHTML = `<strong>✓ Success!</strong> Your message was delivered in real time to <strong>ananyajain729@gmail.com</strong>.`;
+      }
+
+      showToast(`Thank you, ${name}! Your message reached Ananya's inbox.`, 'check');
       document.getElementById('contactForm').reset();
     } else if (data.message && data.message.includes('Activation')) {
-      // First-time activation pending
+      // PENDING ACTIVATION: FormSubmit requires one-time confirmation
+      if (fallbackTab && !fallbackTab.closed) {
+        fallbackTab.location.href = gmailUrl;
+      } else {
+        window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+      }
+
       btn.innerHTML = `
         <i data-lucide="mail" style="width: 16px; height: 16px;"></i>
-        <span>Opening Gmail...</span>
+        <span>Opened in Gmail</span>
       `;
       initLucideIcons();
 
-      showToast("Activation link sent to Ananya's Gmail! Opening web compose backup...", 'send');
-      openGmailFallback();
-      document.getElementById('contactForm').reset();
+      if (statusBox) {
+        statusBox.style.display = 'block';
+        statusBox.style.background = 'rgba(230, 81, 0, 0.1)';
+        statusBox.style.color = '#E65100';
+        statusBox.style.border = '1px solid rgba(230, 81, 0, 0.3)';
+        statusBox.innerHTML = `
+          <strong>⚠️ 1-Step Setup Required for Real-Time Background Delivery:</strong><br>
+          FormSubmit sent an <em>"Activate Form"</em> email to <strong>ananyajain729@gmail.com</strong>.<br>
+          👉 <strong>Open your Gmail (check Inbox & Spam) and click "Activate Form".</strong><br>
+          <em>Once clicked once, all future submissions will reach your Gmail in 1 second!</em><br>
+          <span style="font-size: 0.82rem; color: var(--text-muted); display: block; margin-top: 0.4rem;">
+            In the meantime, your message has been pre-filled in the opened Gmail tab so you can send it immediately.
+          </span>
+        `;
+      }
+
+      showToast("Check ananyajain729@gmail.com to activate instant delivery!", 'alert-circle');
     } else {
-      // Fallback to Gmail Web Compose
+      // Unspecified failure, route to Gmail
+      if (fallbackTab && !fallbackTab.closed) {
+        fallbackTab.location.href = gmailUrl;
+      } else {
+        window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+      }
+
       btn.innerHTML = `
         <i data-lucide="mail" style="width: 16px; height: 16px;"></i>
-        <span>Opening Gmail...</span>
+        <span>Opened in Gmail</span>
       `;
       initLucideIcons();
 
-      showToast('Opening Gmail web compose to ensure delivery...', 'send');
-      openGmailFallback();
-      document.getElementById('contactForm').reset();
+      if (statusBox) {
+        statusBox.style.display = 'block';
+        statusBox.style.background = 'rgba(33, 150, 243, 0.1)';
+        statusBox.style.color = '#1565C0';
+        statusBox.style.border = '1px solid rgba(33, 150, 243, 0.3)';
+        statusBox.innerHTML = `Opened Gmail compose with your message pre-filled to guarantee delivery.`;
+      }
     }
   } catch (error) {
-    console.error('Contact submission fallback:', error);
+    console.error('Contact submission error:', error);
+    if (fallbackTab && !fallbackTab.closed) {
+      fallbackTab.location.href = gmailUrl;
+    } else {
+      window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+    }
+
     btn.innerHTML = `
       <i data-lucide="mail" style="width: 16px; height: 16px;"></i>
-      <span>Opening Gmail...</span>
+      <span>Opened in Gmail</span>
     `;
     initLucideIcons();
 
-    showToast('Redirecting to Gmail compose in browser...', 'send');
-    openGmailFallback();
+    if (statusBox) {
+      statusBox.style.display = 'block';
+      statusBox.style.background = 'rgba(230, 81, 0, 0.1)';
+      statusBox.style.color = '#E65100';
+      statusBox.style.border = '1px solid rgba(230, 81, 0, 0.3)';
+      statusBox.innerHTML = `Network issue detected. We opened Gmail in browser to ensure your message is sent.`;
+    }
   } finally {
     setTimeout(() => {
       btn.innerHTML = originalText;
       btn.disabled = false;
       initLucideIcons();
-    }, 3500);
+    }, 4000);
   }
 }
 

@@ -919,17 +919,19 @@
               <textarea id="contactMessage" class="form-textarea" placeholder="Hello Ananya, I was impressed by your work on Commuto and your engineering background..." required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%;" id="submitFormBtn">
-              <i data-lucide="send" style="width: 16px; height: 16px;"></i>
-              <span>Send Message</span>
-            </button>
-
-            <div style="margin-top: 1rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 0.4rem; flex-wrap: wrap;">
-              <span>Prefer Gmail?</span>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ananyajain729@gmail.com&su=Hello%20Ananya%20-%20Portfolio%20Inquiry" target="_blank" rel="noopener noreferrer" style="color: var(--accent-lavender); text-decoration: underline; font-weight: 500;">
-                Open Web Gmail Compose
-              </a>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <button type="submit" class="btn btn-primary" style="flex: 1 1 200px;" id="submitFormBtn">
+                <i data-lucide="send" style="width: 16px; height: 16px;"></i>
+                <span>Send Message</span>
+              </button>
+              <button type="button" class="btn btn-secondary" style="flex: 1 1 160px;" id="openGmailBtn" onclick="handleDirectGmailClick()" title="Compose pre-filled email in Gmail">
+                <i data-lucide="external-link" style="width: 15px; height: 15px;"></i>
+                <span>Open in Gmail</span>
+              </button>
             </div>
+
+            <!-- Real-time Status & Activation Notice -->
+            <div id="contactFormStatus" style="display: none; margin-top: 1.2rem; padding: 0.9rem 1.1rem; border-radius: 10px; font-size: 0.88rem; line-height: 1.55;"></div>
           </form>
         </div>
       </div>
