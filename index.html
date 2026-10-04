@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ananya Jain — Full Stack Developer & Software Engineer</title>
+  <meta name="description" content="Portfolio of Ananya Jain, Computer Science Undergraduate & Aspiring Full Stack Developer with strong foundations in Java, DSA, OOP, SQL, and web technologies. CGPA 9.58 at JECRC University.">
+  <meta name="author" content="Ananya Jain">
+  <meta name="keywords" content="Ananya Jain, Full Stack Developer, Java, C++, JavaScript, SQL, React, Next.js, JSP, Servlets, REST APIs, JWT, MySQL, JDBC, ServiceNow, Google Cloud, Portfolio, JECRC University">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ananya Jain — Full Stack Developer & Software Engineer">
+  <meta property="og:description" content="Aspiring Full Stack Developer with strong foundations in Java, Data Structures & Algorithms, OOP, and SQL. Top academic standing (9.58 CGPA).">
+  <meta property="og:image" content="assets/images/ananya_profile_clean.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23FAF8F5' stroke='%23C47B74' stroke-width='4'/><text x='50%' y='58%' font-size='42' font-family='serif' font-weight='bold' text-anchor='middle' fill='%23C47B74'>AJ</text></svg>">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- ==================== HEADER / NAVIGATION ==================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Ananya Jain Home">
+        <span class="brand-monogram">AJ<span class="brand-dot"></span></span>
+        <span class="brand-title">Ananya Jain</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#leadership" class="nav-link">Leadership</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle light or dark theme" title="Toggle theme">
+          <i data-lucide="moon" id="themeIcon"></i>
+        </button>
+        <button class="btn btn-secondary btn-sm" id="navResumeBtn" onclick="openResumeModal()">
+          <i data-lucide="file-text" style="width: 15px; height: 15px;"></i>
+          <span>Resume</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="section hero-section" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-status-wrap">
+            <div class="hero-status">
+              <span class="pulse-dot"></span>
+              <span>Available for Software Engineering Roles • Final Year CS</span>
+            </div>
+          </div>
+
+          <h1 class="hero-headline">
+            Engineering scalable systems with <span class="editorial-italic">architectural rigor</span> & thoughtful design.
+          </h1>
+
+          <p class="hero-intro">
+            Aspiring <strong>Full Stack Developer</strong> with strong foundations in <strong>Java</strong>, <strong>Data Structures & Algorithms</strong>, <strong>OOP</strong>, and <strong>SQL</strong>. Passionate about building scalable applications and delivering seamless user experiences through frontend and backend technologies. Currently holding a <strong>9.58 CGPA</strong> at JECRC University.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#projects" class="btn btn-primary">
+              <span>Explore Projects</span>
+              <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i data-lucide="mail" style="width: 16px; height: 16px;"></i>
+              <span>Get in Touch</span>
+            </a>
+            <a href="assets/Ananya_Jain_Resume.pdf" download="Ananya_Jain_Resume.pdf" class="btn btn-gold" id="heroDownloadCvBtn" title="Download Official Resume PDF">
+              <i data-lucide="download" style="width: 16px; height: 16px;"></i>
+              <span>Download CV</span>
+            </a>
+          </div>
+
+          <div class="hero-socials">
+            <span class="social-link-label">Connect:</span>
+            <div class="social-icons-row">
+              <a href="https://github.com/ananyajain327" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/ananya-jain327/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://leetcode.com/u/ananyajain_3/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LeetCode Profile">
+                <i data-lucide="code-2" style="width: 17px; height: 17px;"></i>
+              </a>
+              <a href="mailto:ananyajain729@gmail.com" class="social-icon-btn" title="Email Ananya">
+                <i data-lucide="at-sign" style="width: 17px; height: 17px;"></i>
+              </a>
+              <a href="tel:+917489646191" class="social-icon-btn" title="Phone Call">
+                <i data-lucide="phone" style="width: 17px; height: 17px;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Frame -->
+        <div class="hero-visual">
+          <!-- Floating badge top left -->
+          <div class="hero-floating-badge badge-top-left">
+            <div class="floating-badge-icon">
+              <i data-lucide="server" style="width: 18px; height: 18px;"></i>
+            </div>
+            <div>
+              <div class="floating-badge-title">Java, JSP & Servlets</div>
+              <div class="floating-badge-sub">Backend & RESTful APIs</div>
+            </div>
+          </div>
+
+          <!-- Hero Portrait -->
+          <div class="hero-portrait-frame">
+            <img src="assets/images/ananya_profile_clean.jpg?v=cropped" alt="Ananya Jain — Software Engineer" loading="eager">
+          </div>
+
+          <!-- Floating badge bottom right -->
+          <div class="hero-floating-badge badge-bottom-right">
+            <div class="floating-badge-icon" style="background: var(--accent-lavender-light); color: var(--accent-lavender);">
+              <i data-lucide="database" style="width: 18px; height: 18px;"></i>
+            </div>
+            <div>
+              <div class="floating-badge-title">MySQL, JDBC & SQL</div>
+              <div class="floating-badge-sub">DBMS & Relational Data</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Metrics Strip -->
+      <div class="hero-metrics-strip">
+        <div class="metric-item">
+          <div class="metric-value">9.58<span class="accent">/10</span></div>
+          <div class="metric-label">Academic CGPA</div>
+          <div class="metric-desc">JECRC University, Computer Science</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">4<span class="accent">+</span></div>
+          <div class="metric-label">Industry Certifications</div>
+          <div class="metric-desc">ServiceNow CSA, CAD & Google Cloud</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">60<span class="accent">+</span></div>
+          <div class="metric-label">Class Peers Led</div>
+          <div class="metric-desc">Elected Class Representative</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">~60<span class="accent">%</span></div>
+          <div class="metric-label">Efficiency Boost</div>
+          <div class="metric-desc">Automated ride matching in Commuto</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ME SECTION ==================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-label">01 / Narrative</div>
+      <h2 class="section-title">Bridging <span class="editorial-italic">deep computer science</span> with real-world empathy.</h2>
+
+      <div class="about-grid">
+        <div class="about-narrative">
+          <p>
+            I am a final-year Computer Science undergraduate at JECRC University, Jaipur. My curiosity in tech 
+            lies deep under the hood — from understanding how database indexing minimizes latency, to architecting 
+            stateless JWT authentication and designing resilient RESTful APIs that power dependable everyday applications.
+          </p>
+          <div class="editorial-quote">
+            "Scalable code isn't merely about high RPS; it's about engineering thoughtful, reliable systems that solve real-world problems seamlessly."
+          </div>
+          <p>
+            Through flagship projects like <strong>Commuto</strong>, where I engineered real-time women-safety SOS workflows 
+            and structured relational database schemas, my focus has been on building software that is both logically 
+            dependable under pressure and intuitive to use.
+          </p>
+          <p>
+            Beyond building software, I proudly serve as the <strong>Class Representative for 60+ students</strong>, 
+            coordinating transparent communication between faculty and peers while organizing academic workshops and hackathon initiatives across campus.
+          </p>
+        </div>
+
+        <div class="about-bento-cards">
+          <!-- Card: Education -->
+          <div class="bento-mini-card">
+            <div class="bento-mini-header">
+              <div class="bento-icon"><i data-lucide="graduation-cap" style="width: 17px; height: 17px;"></i></div>
+              <div class="bento-mini-title">Academic Milestones</div>
+            </div>
+            <ul class="academic-list">
+              <li class="academic-item">
+                <div>
+                  <div class="academic-institute">B.Tech in Computer Science</div>
+                  <div style="font-size: 0.76rem; color: var(--text-muted);">JECRC University, Jaipur (2023 – 2027)</div>
+                </div>
+                <div class="academic-score">CGPA 9.58</div>
+              </li>
+              <li class="academic-item">
+                <div>
+                  <div class="academic-institute">Senior Secondary (Class XII)</div>
+                  <div style="font-size: 0.76rem; color: var(--text-muted);">Rani Durgawati Sr. Sec., Chhatarpur (2021 – 2022)</div>
+                </div>
+                <div class="academic-score">84.6%</div>
+              </li>
+              <li class="academic-item">
+                <div>
+                  <div class="academic-institute">Secondary School (Class X)</div>
+                  <div style="font-size: 0.76rem; color: var(--text-muted);">Maharishi Vidya Mandir, Chhatarpur (2019 – 2020)</div>
+                </div>
+                <div class="academic-score">82.8%</div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card: Core Philosophy -->
+          <div class="bento-mini-card">
+            <div class="bento-mini-header">
+              <div class="bento-icon" style="background: var(--accent-lavender-light); color: var(--accent-lavender);">
+                <i data-lucide="sparkles" style="width: 17px; height: 17px;"></i>
+              </div>
+              <div class="bento-mini-title">Engineering Philosophy</div>
+            </div>
+            <div class="bento-mini-desc">
+              Strong believer in clean code architecture, strict type safety, modular microservice foundations, 
+              and prioritizing accessibility. I approach problems starting from the data schema up to the user interface.
+            </div>
+          </div>
+
+          <!-- Card: Tech Arsenal Synergy -->
+          <div class="bento-mini-card">
+            <div class="bento-mini-header">
+              <div class="bento-icon" style="background: var(--accent-gold-light); color: var(--accent-gold);">
+                <i data-lucide="layers" style="width: 17px; height: 17px;"></i>
+              </div>
+              <div class="bento-mini-title">Full-Stack Synergy</div>
+            </div>
+            <div class="bento-mini-desc">
+              Harnessing Java, JSP, and Servlets for robust, scalable backend architectures, paired with responsive HTML, CSS, JavaScript frontends and reliable MySQL relational persistence.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED PROJECTS SECTION ==================== -->
+  <section class="section" id="projects" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="projects-header-row">
+        <div>
+          <div class="section-label">02 / Portfolio</div>
+          <h2 class="section-title">Engineered for <span class="editorial-italic">real-world impact</span>.</h2>
+          <p class="section-subtitle">
+            Featured flagship live web platform highlighting full-stack engineering, team leadership, automated ride coordination, and dedicated women-safety protocols.
+          </p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span class="badge badge-rose" style="font-size: 0.82rem; padding: 0.5rem 1.15rem;">
+            <span class="pulse-dot"></span>
+            <span>Live Project In Production</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="projects-stack">
+        <!-- FEATURED LIVE PROJECT: Commuto -->
+        <article class="editorial-project-card" data-category="fullstack mobility">
+          <div class="project-content-column">
+            <div class="project-meta-row">
+              <span class="project-number">01</span>
+              <span class="badge badge-rose"><span class="pulse-dot"></span> Live Production</span>
+              <span class="badge badge-lavender">Next.js 16 • Spring Boot 3.4</span>
+            </div>
+
+            <h3 class="project-title">Commuto</h3>
+            <div class="project-tagline">Smart Ride Sharing & Commuting Platform</div>
+
+            <p class="project-summary">
+              Architected and deployed <strong>Commuto</strong> — an active live carpooling and smart mobility web platform for students and corporate commuters. Connects commuters traveling the same route to cut travel expenses, reduce highway emissions, and guarantee passenger trust with verified profiles, real-time GPS tracking, and women-safety protocols.
+            </p>
+
+            <ul class="project-key-highlights">
+              <li>
+                <i data-lucide="check-circle-2" style="width: 16px; height: 16px;"></i>
+                <span><strong>Live on Vercel:</strong> Deployed modern frontend with Next.js 16, React 19, and Tailwind CSS; backend powered by Spring Boot 3.4 and PostgreSQL.</span>
+              </li>
+              <li>
+                <i data-lucide="check-circle-2" style="width: 16px; height: 16px;"></i>
+                <span><strong>Women-Only Pooling Option:</strong> Dedicated safety filter enabling female commuters to match exclusively with verified women riders and drivers.</span>
+              </li>
+              <li>
+                <i data-lucide="check-circle-2" style="width: 16px; height: 16px;"></i>
+                <span><strong>1-Touch Emergency SOS:</strong> Panic broadcast system with instant location coordinate logs and emergency alert dispatch.</span>
+              </li>
+              <li>
+                <i data-lucide="check-circle-2" style="width: 16px; height: 16px;"></i>
+                <span><strong>Real-Time Tracking & Chat:</strong> Leaflet interactive maps and Spring STOMP WebSockets for live driver location updates and in-app messaging.</span>
+              </li>
+              <li>
+                <i data-lucide="check-circle-2" style="width: 16px; height: 16px;"></i>
+                <span><strong>Fair Cost Sharing & Wallet:</strong> Built-in digital balance with Razorpay checkout for seamless fare splitting with ₹0 commission fee.</span>
+              </li>
+            </ul>
+
+            <div class="project-tags-wrap">
+              <span class="badge">Next.js 16</span>
+              <span class="badge">React 19</span>
+              <span class="badge">TypeScript</span>
+              <span class="badge">Spring Boot 3.4</span>
+              <span class="badge">Java 21</span>
+              <span class="badge">PostgreSQL</span>
+              <span class="badge">Tailwind CSS</span>
+              <span class="badge">STOMP WebSockets</span>
+              <span class="badge">Razorpay</span>
+              <span class="badge badge-rose"><span class="pulse-dot"></span> Live on Vercel</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://commuto-iota.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <span class="pulse-dot" style="background: #FFFFFF;"></span>
+                <span>Live Demo (commuto-iota.vercel.app)</span>
+                <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+              </a>
+              <button class="btn btn-secondary btn-sm" onclick="openCommutoModal()">
+                <i data-lucide="layers" style="width: 14px; height: 14px;"></i>
+                <span>Architecture & System Flow</span>
+              </button>
+              <a href="https://github.com/ananyajain327/Commuto" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                <span>GitHub Repo</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-visual-column">
+            <div class="project-image-wrapper" onclick="window.open('https://commuto-iota.vercel.app/', '_blank')" title="Click to launch Commuto Live (commuto-iota.vercel.app)">
+              <img src="assets/images/commuto.jpg" alt="Commuto Live Production Platform Interface" loading="lazy">
+              <div class="project-overlay-badge" style="background: rgba(18, 17, 23, 0.88); color: #FAF7F2; border: 1px solid rgba(255,255,255,0.15);">
+                <span class="pulse-dot" style="background: #10B981;"></span>
+                <span>Live App • commuto-iota.vercel.app</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Algorithmic Problem Solving & LeetCode Strip -->
+      <div class="secondary-projects-grid">
+        <div class="special-bento-card">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <div class="bento-icon" style="background: var(--accent-gold-light); color: var(--accent-gold);">
+                <i data-lucide="terminal" style="width: 17px; height: 17px;"></i>
+              </div>
+              <h4 style="font-size: 1.15rem; font-weight: 600;">Algorithmic Problem Solving</h4>
+            </div>
+            <span class="badge badge-gold">Java & C++</span>
+          </div>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.2rem;">
+            Continuous problem solver with disciplined practice across Data Structures and Algorithms including 
+            Graph Traversals, Dynamic Programming, Heap/Priority Queues, and Binary Search Trees.
+          </p>
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted);">leetcode.com/u/ananyajain_3</span>
+            <a href="https://leetcode.com/u/ananyajain_3/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              <span>View LeetCode Profile</span>
+              <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="special-bento-card">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <div class="bento-icon" style="background: var(--accent-rose-light); color: var(--accent-rose);">
+                <i data-lucide="git-pull-request" style="width: 17px; height: 17px;"></i>
+              </div>
+              <h4 style="font-size: 1.15rem; font-weight: 600;">Open Source & GitHub</h4>
+            </div>
+            <span class="badge badge-rose">Continuous Integration</span>
+          </div>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.2rem;">
+            Committed to semantic commit messages, branching workflows, modular code organization, and collaborative 
+            pull request reviews following industry engineering standards.
+          </p>
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted);">github.com/ananyajain327</span>
+            <a href="https://github.com/ananyajain327" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              <span>Explore Repositories</span>
+              <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS & ARSENAL SECTION ==================== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-label">03 / Capabilities</div>
+      <h2 class="section-title">Technical arsenal & <span class="editorial-italic">core competencies</span>.</h2>
+      <p class="section-subtitle" style="margin-bottom: 3rem;">
+        Mastery over backend infrastructure, modern reactive frontends, relational databases, and fundamental computer science principles.
+      </p>
+
+      <div class="skills-bento-grid">
+        <!-- 1. Languages -->
+        <div class="skill-category-card">
+          <div class="skill-card-header">
+            <div class="skill-icon-circle circle-rose">
+              <i data-lucide="code" style="width: 22px; height: 22px;"></i>
+            </div>
+            <div>
+              <div class="skill-cat-title">Languages</div>
+              <div class="skill-cat-sub">Programming & Querying</div>
+            </div>
+          </div>
+          <div class="skill-pills-flow">
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>Java</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>C++</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>JavaScript</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>SQL</span>
+          </div>
+        </div>
+
+        <!-- 2. Frontend -->
+        <div class="skill-category-card">
+          <div class="skill-card-header">
+            <div class="skill-icon-circle circle-gold">
+              <i data-lucide="layout" style="width: 22px; height: 22px;"></i>
+            </div>
+            <div>
+              <div class="skill-cat-title">Frontend</div>
+              <div class="skill-cat-sub">Modern Web Interfaces</div>
+            </div>
+          </div>
+          <div class="skill-pills-flow">
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>HTML5</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>CSS3</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>React</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>Next.js</span>
+          </div>
+        </div>
+
+        <!-- 3. Backend -->
+        <div class="skill-category-card">
+          <div class="skill-card-header">
+            <div class="skill-icon-circle circle-lavender">
+              <i data-lucide="server" style="width: 22px; height: 22px;"></i>
+            </div>
+            <div>
+              <div class="skill-cat-title">Backend</div>
+              <div class="skill-cat-sub">APIs & Authentication</div>
+            </div>
+          </div>
+          <div class="skill-pills-flow">
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>JSP</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>Servlets</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>REST APIs</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>JWT</span>
+          </div>
+        </div>
+
+        <!-- 4. Database -->
+        <div class="skill-category-card">
+          <div class="skill-card-header">
+            <div class="skill-icon-circle circle-sage">
+              <i data-lucide="database" style="width: 22px; height: 22px;"></i>
+            </div>
+            <div>
+              <div class="skill-cat-title">Database</div>
+              <div class="skill-cat-sub">Storage & Connectivity</div>
+            </div>
+          </div>
+          <div class="skill-pills-flow">
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>MySQL</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>JDBC</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>SQL</span>
+          </div>
+        </div>
+
+        <!-- 5. Core CS -->
+        <div class="skill-category-card">
+          <div class="skill-card-header">
+            <div class="skill-icon-circle circle-blush">
+              <i data-lucide="binary" style="width: 22px; height: 22px;"></i>
+            </div>
+            <div>
+              <div class="skill-cat-title">Core CS</div>
+              <div class="skill-cat-sub">Foundations & Architecture</div>
+            </div>
+          </div>
+          <div class="skill-pills-flow">
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>DSA</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>OOP</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>DBMS</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>OS</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>Computer Networks</span>
+          </div>
+        </div>
+
+        <!-- 6. Tools -->
+        <div class="skill-category-card">
+          <div class="skill-card-header">
+            <div class="skill-icon-circle circle-rose">
+              <i data-lucide="wrench" style="width: 22px; height: 22px;"></i>
+            </div>
+            <div>
+              <div class="skill-cat-title">Tools</div>
+              <div class="skill-cat-sub">Development & Versioning</div>
+            </div>
+          </div>
+          <div class="skill-pills-flow">
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>Git</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>GitHub</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>VS Code</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>Postman</span>
+          </div>
+        </div>
+
+        <!-- 7. Platforms -->
+        <div class="skill-category-card card-wide">
+          <div class="skill-card-header">
+            <div class="skill-icon-circle circle-gold">
+              <i data-lucide="cloud" style="width: 22px; height: 22px;"></i>
+            </div>
+            <div>
+              <div class="skill-cat-title">Platforms</div>
+              <div class="skill-cat-sub">Enterprise Automation, Cloud & Networking</div>
+            </div>
+          </div>
+          <div class="skill-pills-flow">
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>ServiceNow</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>Google Cloud</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>HPE Networking</span>
+            <span class="skill-interactive-pill"><i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i>Junos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CERTIFICATIONS SECTION ==================== -->
+  <section class="section" id="certifications" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-label">04 / Verified Credentials</div>
+      <h2 class="section-title">Certifications & <span class="editorial-italic">accreditations</span>.</h2>
+      <p class="section-subtitle" style="margin-bottom: 3.2rem;">
+        Recognized industry credentials verifying expertise in enterprise platform workflows, application development, and networking infrastructure. All credentials directly verifiable on Credly.
+      </p>
+
+      <div class="certifications-timeline-grid">
+        <!-- 1. Juniper Networks JNCIA-Junos -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-badge-top">
+              <div class="cert-badge-img-wrapper" title="Juniper Networks Certified Associate, Junos">
+                <img src="assets/images/badges/jncia.png" alt="Juniper Networks JNCIA-Junos" class="cert-badge-img">
+              </div>
+              <div class="verified-seal" title="Verified Credential on Credly">
+                <i data-lucide="badge-check" style="width: 18px; height: 18px;"></i>
+              </div>
+            </div>
+            <span class="cert-issuer-badge">Juniper Networks</span>
+            <h3 class="cert-title">Certified Associate, Junos (JNCIA-Junos)</h3>
+            <div class="cert-id-tag" title="Credential ID: 5f0dc439-f889-4fda-b1ef-2a4ebd419c63">
+              <i data-lucide="shield" style="width: 12px; height: 12px;"></i>
+              <span>ID: 5f0dc439...9c63</span>
+            </div>
+            <p class="cert-description">
+              Validates core networking fundamentals, routing & switching architectures, firewall filters, and Junos OS configuration, CLI navigation, and interface telemetry monitoring.
+            </p>
+          </div>
+          <div class="cert-footer-row">
+            <span class="cert-date">Sep 2026 • Valid thru 2029</span>
+            <div class="cert-actions-group">
+              <button class="cert-info-btn" onclick="openCertModal('jncia')" title="View Credential Details">
+                <i data-lucide="info" style="width: 14px; height: 14px;"></i>
+              </button>
+              <a href="https://www.credly.com/badges/5f0dc439-f889-4fda-b1ef-2a4ebd419c63" target="_blank" rel="noopener noreferrer" class="cert-view-btn" title="Redirect directly to Credly badge verification">
+                <span>Verify Credly</span>
+                <i data-lucide="external-link" style="width: 13px; height: 13px;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. ServiceNow CSA -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-badge-top">
+              <div class="cert-badge-img-wrapper" title="ServiceNow Certified System Administrator">
+                <img src="assets/images/badges/csa.png" alt="ServiceNow CSA Badge" class="cert-badge-img">
+              </div>
+              <div class="verified-seal" title="Verified Credential on Credly">
+                <i data-lucide="badge-check" style="width: 18px; height: 18px;"></i>
+              </div>
+            </div>
+            <span class="cert-issuer-badge">ServiceNow</span>
+            <h3 class="cert-title">Certified System Administrator (CSA)</h3>
+            <div class="cert-id-tag" title="Credential ID: 953e6765-8237-4836-957d-b2d559bccb50">
+              <i data-lucide="shield" style="width: 12px; height: 12px;"></i>
+              <span>ID: 953e6765...cb50</span>
+            </div>
+            <p class="cert-description">
+              Demonstrates proficiency in ServiceNow platform configuration, user administration, automated workflow architecture, incident and request fulfillment, and CMDB governance.
+            </p>
+          </div>
+          <div class="cert-footer-row">
+            <span class="cert-date">Mar 24, 2026</span>
+            <div class="cert-actions-group">
+              <button class="cert-info-btn" onclick="openCertModal('csa')" title="View Credential Details">
+                <i data-lucide="info" style="width: 14px; height: 14px;"></i>
+              </button>
+              <a href="https://www.credly.com/badges/953e6765-8237-4836-957d-b2d559bccb50" target="_blank" rel="noopener noreferrer" class="cert-view-btn" title="Redirect directly to Credly badge verification">
+                <span>Verify Credly</span>
+                <i data-lucide="external-link" style="width: 13px; height: 13px;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. ServiceNow CAD -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-badge-top">
+              <div class="cert-badge-img-wrapper" title="ServiceNow Certified Application Developer">
+                <img src="assets/images/badges/cad.png" alt="ServiceNow CAD Badge" class="cert-badge-img">
+              </div>
+              <div class="verified-seal" title="Verified Credential on Credly">
+                <i data-lucide="badge-check" style="width: 18px; height: 18px;"></i>
+              </div>
+            </div>
+            <span class="cert-issuer-badge">ServiceNow</span>
+            <h3 class="cert-title">Certified Application Developer (CAD)</h3>
+            <div class="cert-id-tag" title="Credential ID: a0022584-70b6-4c8b-81be-8d0537f0ab6e">
+              <i data-lucide="shield" style="width: 12px; height: 12px;"></i>
+              <span>ID: a0022584...ab6e</span>
+            </div>
+            <p class="cert-description">
+              Validates advanced competence in building scoped enterprise applications, scripting business rules, client scripts, UI policies, UI actions, custom flow actions, and REST integration endpoints.
+            </p>
+          </div>
+          <div class="cert-footer-row">
+            <span class="cert-date">May 29, 2026</span>
+            <div class="cert-actions-group">
+              <button class="cert-info-btn" onclick="openCertModal('cad')" title="View Credential Details">
+                <i data-lucide="info" style="width: 14px; height: 14px;"></i>
+              </button>
+              <a href="https://www.credly.com/badges/a0022584-70b6-4c8b-81be-8d0537f0ab6e" target="_blank" rel="noopener noreferrer" class="cert-view-btn" title="Redirect directly to Credly badge verification">
+                <span>Verify Credly</span>
+                <i data-lucide="external-link" style="width: 13px; height: 13px;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Google Cloud Engineering Certificate -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-badge-top">
+              <div class="cert-badge-img-wrapper" title="Google Cloud Engineering Certificate">
+                <img src="assets/images/badges/gcp.png" alt="Google Cloud Badge" class="cert-badge-img">
+              </div>
+              <div class="verified-seal" title="Verified Credential on Credly">
+                <i data-lucide="badge-check" style="width: 18px; height: 18px;"></i>
+              </div>
+            </div>
+            <span class="cert-issuer-badge">Google Cloud</span>
+            <h3 class="cert-title">Google Cloud Engineering Certificate</h3>
+            <div class="cert-id-tag" title="Credential ID: fabc687f-6b0a-44df-b910-029409bcf33c">
+              <i data-lucide="shield" style="width: 12px; height: 12px;"></i>
+              <span>ID: fabc687f...f33c</span>
+            </div>
+            <p class="cert-description">
+              Validates fundamental competencies in cloud infrastructure, compute resource deployment, cloud storage, IAM access management, VPC networking, and cloud solution deployment.
+            </p>
+          </div>
+          <div class="cert-footer-row">
+            <span class="cert-date">Nov 25, 2025</span>
+            <div class="cert-actions-group">
+              <button class="cert-info-btn" onclick="openCertModal('gcp')" title="View Credential Details">
+                <i data-lucide="info" style="width: 14px; height: 14px;"></i>
+              </button>
+              <a href="https://www.credly.com/badges/fabc687f-6b0a-44df-b910-029409bcf33c" target="_blank" rel="noopener noreferrer" class="cert-view-btn" title="Redirect directly to Credly badge verification">
+                <span>Verify Credly</span>
+                <i data-lucide="external-link" style="width: 13px; height: 13px;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Credly Full Profile & Micro-Certifications Banner -->
+      <div style="margin-top: 2.5rem; background: var(--bg-card); padding: 1.8rem 2.2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-card); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.4rem;">
+        <div style="display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center;">
+            <img src="assets/images/badges/jncia.png" alt="JNCIA" style="width: 36px; height: 36px; object-fit: contain; margin-right: -8px; border-radius: 50%; background: #FFF; padding: 2px; border: 1px solid var(--border-subtle);" title="Juniper JNCIA-Junos">
+            <img src="assets/images/badges/csa.png" alt="CSA" style="width: 36px; height: 36px; object-fit: contain; margin-right: -8px; border-radius: 50%; background: #FFF; padding: 2px; border: 1px solid var(--border-subtle);" title="ServiceNow CSA">
+            <img src="assets/images/badges/cad.png" alt="CAD" style="width: 36px; height: 36px; object-fit: contain; margin-right: -8px; border-radius: 50%; background: #FFF; padding: 2px; border: 1px solid var(--border-subtle);" title="ServiceNow CAD">
+            <img src="assets/images/badges/gcp.png" alt="GCP" style="width: 36px; height: 36px; object-fit: contain; margin-right: -8px; border-radius: 50%; background: #FFF; padding: 2px; border: 1px solid var(--border-subtle);" title="Google Cloud Engineering">
+            <img src="assets/images/badges/flow_designer.png" alt="Flow Designer" style="width: 36px; height: 36px; object-fit: contain; border-radius: 50%; background: #FFF; padding: 2px; border: 1px solid var(--border-subtle);" title="Micro-Certification Flow Designer">
+          </div>
+          <div>
+            <div style="font-weight: 600; font-size: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <span>Official Credly Earner Profile • 10 Verified Badges</span>
+              <span class="badge badge-emerald" style="font-size: 0.72rem; padding: 0.15rem 0.55rem;"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Credly Verified</span>
+            </div>
+            <div style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 0.25rem;">
+              Includes Juniper JNCIA-Junos, ServiceNow CSA & CAD, Flow Designer, Welcome to ServiceNow, Google Cloud & Terraform.
+            </div>
+          </div>
+        </div>
+        <a href="https://www.credly.com/users/ananya-jain.15bb2b79/badges" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          <span>View All 10 Badges on Credly</span>
+          <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LEADERSHIP SECTION ==================== -->
+  <section class="section" id="leadership">
+    <div class="container">
+      <div class="section-label">05 / Responsibility</div>
+      <h2 class="section-title">Leadership beyond <span class="editorial-italic">the codebase</span>.</h2>
+      <p class="section-subtitle" style="margin-bottom: 3rem;">
+        Cultivating collaboration, proactive communication, and organizational execution within university academia.
+      </p>
+
+      <div class="leadership-editorial-card">
+        <div>
+          <span class="badge badge-rose" style="margin-bottom: 1rem;">Student Governance & Leadership</span>
+          <h3 class="leadership-role-title">Class Representative</h3>
+          <div class="leadership-org">JECRC University • Jaipur, Rajasthan</div>
+          <div class="leadership-tenure">
+            <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
+            <span>Jul 2023 – Present</span>
+          </div>
+          <div style="margin-top: 1.8rem; font-size: 0.94rem; color: var(--text-secondary); line-height: 1.7;">
+            Serving as the elected representative for our engineering cohort, advocating for peer academic enrichment, 
+            and creating transparent conduits between administration and students.
+          </div>
+        </div>
+
+        <div>
+          <ul class="leadership-points">
+            <li>
+              <div class="leadership-bullet-icon"><i data-lucide="users"></i></div>
+              <div>
+                <strong>Primary Liaison for 60+ Students:</strong> Represented and coordinated an active batch of 60+ engineering undergraduates as the single primary point of contact between departmental faculty, deans, and students.
+              </div>
+            </li>
+            <li>
+              <div class="leadership-bullet-icon"><i data-lucide="message-square"></i></div>
+              <div>
+                <strong>Academic Communication & Problem Resolution:</strong> Managed timely communication channels regarding course curricula, exam logistics, lab requirements, and academic feedback loops.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section class="section" id="contact" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-label">06 / Connect</div>
+      <h2 class="section-title">Let's craft something <span class="editorial-italic">extraordinary</span>.</h2>
+      <p class="section-subtitle" style="margin-bottom: 3.5rem;">
+        Whether you are discussing upcoming software engineering roles, full-stack opportunities, or architecture ideas — I would love to connect.
+      </p>
+
+      <div class="contact-grid">
+        <!-- Contact Information Card -->
+        <div class="contact-card-editorial">
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem; font-weight: 600;">Get in Touch Directly</h3>
+          <p class="contact-intro-text">
+            I am actively seeking software engineering internships and junior full-stack developer roles where I can deliver immediate value through clean code and scalable backends.
+          </p>
+
+          <div class="contact-channels-list">
+            <!-- Email -->
+            <div class="contact-channel-item">
+              <div class="channel-info-group">
+                <div class="channel-icon"><i data-lucide="mail" style="width: 17px; height: 17px;"></i></div>
+                <div>
+                  <div class="channel-label">Email</div>
+                  <a href="mailto:ananyajain729@gmail.com" class="channel-val">ananyajain729@gmail.com</a>
+                </div>
+              </div>
+              <button class="channel-action-btn" onclick="copyToClipboard('ananyajain729@gmail.com', 'Email copied to clipboard!')">
+                <i data-lucide="copy" style="width: 12px; height: 12px;"></i>
+                <span>Copy</span>
+              </button>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-channel-item">
+              <div class="channel-info-group">
+                <div class="channel-icon" style="background: var(--accent-sage-light); color: var(--accent-sage);">
+                  <i data-lucide="phone" style="width: 17px; height: 17px;"></i>
+                </div>
+                <div>
+                  <div class="channel-label">Phone / WhatsApp</div>
+                  <a href="tel:+917489646191" class="channel-val">+91-7489646191</a>
+                </div>
+              </div>
+              <a href="tel:+917489646191" class="channel-action-btn" style="text-decoration: none;" title="Call +91-7489646191">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>Call</span>
+              </a>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="contact-channel-item">
+              <div class="channel-info-group">
+                <div class="channel-icon" style="background: var(--accent-lavender-light); color: var(--accent-lavender);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </div>
+                <div>
+                  <div class="channel-label">LinkedIn</div>
+                  <a href="https://www.linkedin.com/in/ananya-jain327/" target="_blank" rel="noopener noreferrer" class="channel-val">in/ananya-jain327</a>
+                </div>
+              </div>
+              <a href="https://www.linkedin.com/in/ananya-jain327/" target="_blank" rel="noopener noreferrer" class="channel-action-btn" style="text-decoration: none;" title="Connect on LinkedIn">
+                <i data-lucide="arrow-up-right" style="width: 12px; height: 12px;"></i>
+                <span>Connect</span>
+              </a>
+            </div>
+
+            <!-- Location -->
+            <div class="contact-channel-item">
+              <div class="channel-info-group">
+                <div class="channel-icon" style="background: var(--accent-gold-light); color: var(--accent-gold);">
+                  <i data-lucide="map-pin" style="width: 17px; height: 17px;"></i>
+                </div>
+                <div>
+                  <div class="channel-label">Location</div>
+                  <div class="channel-val">Jaipur, Rajasthan, India</div>
+                </div>
+              </div>
+              <span class="badge badge-gold" style="font-size: 0.72rem;">Open to Relocation</span>
+            </div>
+          </div>
+
+          <div style="padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+              <a href="assets/Ananya_Jain_Resume.pdf" download="Ananya_Jain_Resume.pdf" class="btn btn-primary btn-sm" title="Download Official Resume PDF">
+                <i data-lucide="download" style="width: 14px; height: 14px;"></i>
+                <span>Download Resume (PDF)</span>
+              </a>
+              <button class="btn btn-secondary btn-sm" onclick="openResumeModal()" title="View Online Resume">
+                <i data-lucide="eye" style="width: 14px; height: 14px;"></i>
+                <span>View Online</span>
+              </button>
+            </div>
+            <div class="social-icons-row">
+              <a href="https://github.com/ananyajain327" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/ananya-jain327/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://leetcode.com/u/ananyajain_3/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LeetCode Profile"><i data-lucide="code-2" style="width: 16px; height: 16px;"></i></a>
+              <a href="https://www.credly.com/users/ananya-jain.15bb2b79/badges" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Credly Verified Badges"><i data-lucide="award" style="width: 16px; height: 16px;"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Contact Form -->
+        <div class="contact-form-wrapper">
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem; font-weight: 600;">Send a Direct Message</h3>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.8rem;">
+            Fill out the form below and it will compose a pre-filled direct dispatch straight to my inbox.
+          </p>
+
+          <form id="contactForm" onsubmit="handleContactSubmit(event)">
+            <div class="form-group">
+              <label class="form-label" for="contactName">Your Name *</label>
+              <input type="text" id="contactName" class="form-input" placeholder="e.g. Eleanor Vance" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactEmail">Your Email Address *</label>
+              <input type="email" id="contactEmail" class="form-input" placeholder="e.g. eleanor@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactSubject">Subject / Opportunity *</label>
+              <input type="text" id="contactSubject" class="form-input" placeholder="e.g. Software Engineering Opportunity / Collaboration" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactMessage">Your Message *</label>
+              <textarea id="contactMessage" class="form-textarea" placeholder="Hello Ananya, I was impressed by your work on Commuto and your engineering background..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;" id="submitFormBtn">
+              <i data-lucide="send" style="width: 16px; height: 16px;"></i>
+              <span>Send Message</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-row">
+        <div>
+          <a href="#hero" class="brand-logo">
+            <span class="brand-monogram">AJ<span class="brand-dot"></span></span>
+            <span class="brand-title">Ananya Jain</span>
+          </a>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.6rem; max-width: 320px;">
+            Full-Stack Developer • Java, JSP, Servlets, MySQL & Node.js
+          </p>
+        </div>
+
+        <ul class="footer-nav">
+          <li><a href="#about" class="footer-nav-link">About</a></li>
+          <li><a href="#projects" class="footer-nav-link">Projects</a></li>
+          <li><a href="#skills" class="footer-nav-link">Skills</a></li>
+          <li><a href="#certifications" class="footer-nav-link">Certifications</a></li>
+          <li><a href="#leadership" class="footer-nav-link">Leadership</a></li>
+          <li><a href="#contact" class="footer-nav-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>
+          &copy; <span id="currentYear">2026</span> Ananya Jain. All rights reserved.
+        </div>
+        <div class="footer-signature">
+          Crafted with editorial care & clean code.
+        </div>
+        <div>
+          <a href="#hero" style="color: var(--accent-rose); text-decoration: none; font-size: 0.84rem; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span>Back to top</span>
+            <i data-lucide="arrow-up" style="width: 14px; height: 14px;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- Modal: Commuto Details -->
+  <div class="modal-overlay" id="commutoModal" onclick="handleBackdropClick(event, 'commutoModal')">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeModal('commutoModal')" aria-label="Close modal">
+        <i data-lucide="x"></i>
+      </button>
+
+      <div class="project-meta-row" style="margin-bottom: 0.8rem;">
+        <span class="badge badge-rose"><span class="pulse-dot"></span> Live on Vercel</span>
+        <span class="badge badge-lavender">Next.js 16 • React 19 • Spring Boot 3.4 • PostgreSQL 16</span>
+      </div>
+
+      <h3 style="font-size: 1.85rem; margin-bottom: 0.5rem; font-weight: 600;">Commuto — Smart Ride Sharing & Commuting Platform</h3>
+      <div style="font-size: 0.95rem; color: var(--accent-rose); margin-bottom: 1.5rem; font-weight: 500;">
+        Live Production: <a href="https://commuto-iota.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline; font-family: var(--font-mono); font-size: 0.88rem;">commuto-iota.vercel.app ↗</a>
+      </div>
+
+      <div style="width: 100%; aspect-ratio: 16/9; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.8rem; border: 1px solid var(--border-card);">
+        <img src="assets/images/commuto.jpg" alt="Commuto Live Production Interface" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <h4 style="font-size: 1.15rem; margin-bottom: 0.75rem;">Full-Stack Architecture & Safety Framework</h4>
+      <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.2rem;">
+        Commuto connects students and workplace commuters to cut daily travel expenses and highway congestion. The platform integrates end-to-end security, live telemetry, and community trust:
+      </p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+        <div style="background: var(--bg-pill); padding: 1.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <div style="font-weight: 600; font-size: 0.92rem; margin-bottom: 0.4rem; color: var(--text-primary);"><i data-lucide="shield-alert" style="width: 15px; height: 15px; display: inline-block; vertical-align: middle; color: var(--accent-rose); margin-right: 0.35rem;"></i>Women-Only Pooling Option</div>
+          <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.55;">
+            Dedicated safety filter enabling female commuters to search, match, and ride exclusively with verified women passengers and drivers.
+          </p>
+        </div>
+        <div style="background: var(--bg-pill); padding: 1.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <div style="font-weight: 600; font-size: 0.92rem; margin-bottom: 0.4rem; color: var(--text-primary);"><i data-lucide="radio" style="width: 15px; height: 15px; display: inline-block; vertical-align: middle; color: var(--accent-lavender); margin-right: 0.35rem;"></i>1-Touch Emergency SOS Shield</div>
+          <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.55;">
+            Instant panic alert dispatch broadcasting live GPS coordinates and telemetry logs to emergency contacts and campus security.
+          </p>
+        </div>
+        <div style="background: var(--bg-pill); padding: 1.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <div style="font-weight: 600; font-size: 0.92rem; margin-bottom: 0.4rem; color: var(--text-primary);"><i data-lucide="map-pin" style="width: 15px; height: 15px; display: inline-block; vertical-align: middle; color: var(--accent-gold); margin-right: 0.35rem;"></i>Live GPS & WebSocket Chat</div>
+          <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.55;">
+            Interactive Leaflet maps for route visualization and Spring STOMP WebSockets for real-time driver coordinates and in-app ride coordination.
+          </p>
+        </div>
+        <div style="background: var(--bg-pill); padding: 1.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <div style="font-weight: 600; font-size: 0.92rem; margin-bottom: 0.4rem; color: var(--text-primary);"><i data-lucide="wallet" style="width: 15px; height: 15px; display: inline-block; vertical-align: middle; color: #10B981; margin-right: 0.35rem;"></i>In-App Wallet & Razorpay</div>
+          <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.55;">
+            Digital wallet balance management with Razorpay payment checkout for transparent fuel-cost splitting with ₹0 commission fee.
+          </p>
+        </div>
+      </div>
+
+      <div style="background: var(--bg-pill); padding: 1.3rem; border-radius: var(--radius-md); margin-bottom: 1.8rem; border: 1px solid var(--border-subtle);">
+        <div style="font-weight: 600; font-size: 0.92rem; margin-bottom: 0.5rem; color: var(--text-primary);"><i data-lucide="cpu" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 0.35rem; color: var(--accent-rose);"></i>Production Tech Stack & Standards:</div>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6;">
+          <strong>Frontend:</strong> Next.js 16, React 19, TypeScript, Tailwind CSS v4, Vercel Edge • 
+          <strong>Backend:</strong> Spring Boot 3.4, Java 21, Spring Security 6 (JWT + Google OAuth), STOMP WebSockets • 
+          <strong>Database:</strong> PostgreSQL 16 with Flyway automated schema migrations.
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+        <a href="https://commuto-iota.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          <span class="pulse-dot" style="background: #FFFFFF;"></span>
+          <span>Open Live App (commuto-iota.vercel.app)</span>
+          <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+        </a>
+        <a href="https://github.com/ananyajain327/Commuto" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          <span>GitHub: ananyajain327/Commuto</span>
+        </a>
+        <button class="btn btn-secondary btn-sm" onclick="closeModal('commutoModal')">Close Window</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Certificate Verification Modal -->
+  <div class="modal-overlay" id="certModal" onclick="handleBackdropClick(event, 'certModal')">
+    <div class="modal-container" style="max-width: 650px;">
+      <button class="modal-close-btn" onclick="closeModal('certModal')" aria-label="Close modal">
+        <i data-lucide="x"></i>
+      </button>
+
+      <div style="text-align: center; margin-bottom: 1.8rem;">
+        <div style="width: 76px; height: 76px; border-radius: var(--radius-lg); background: var(--bg-pill); border: 1px solid var(--border-subtle); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1rem; padding: 8px;">
+          <img id="certModalBadgeImg" src="assets/images/badges/csa.png" alt="Certificate Badge" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div>
+          <span class="badge badge-gold" id="certModalIssuer">ServiceNow</span>
+        </div>
+        <h3 style="font-size: 1.55rem; margin-top: 0.75rem; margin-bottom: 0.35rem;" id="certModalTitle">Certificate Credential</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted);" id="certModalRecipient">Awarded to Ananya Jain • Verified on Credly</p>
+      </div>
+
+      <div style="background: var(--bg-pill); border-radius: var(--radius-lg); padding: 1.6rem; border: 1px solid var(--border-subtle); margin-bottom: 1.8rem;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; font-size: 0.85rem;">
+          <span style="color: var(--text-muted);">Verification Status:</span>
+          <span style="color: #10B981; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Verified Official Credential
+          </span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; font-size: 0.85rem;">
+          <span style="color: var(--text-muted);">Credly Credential ID:</span>
+          <span style="font-family: var(--font-mono); font-weight: 600; color: var(--text-primary); font-size: 0.8rem; word-break: break-all; max-width: 62%; text-align: right;" id="certModalId">5f0dc439-f889-4fda-b1ef-2a4ebd419c63</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; font-size: 0.85rem;">
+          <span style="color: var(--text-muted);">Issue / Expiration:</span>
+          <span style="font-family: var(--font-mono); font-weight: 500; color: var(--text-primary);" id="certModalDate">Sep 20, 2026</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+          <span style="color: var(--text-muted);">Skills Tested:</span>
+          <span style="font-weight: 500; color: var(--text-primary); text-align: right; max-width: 60%; line-height: 1.5;" id="certModalSkills">Workflows, CMDB, Automation</span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap;">
+        <a id="certModalCredlyLink" href="https://www.credly.com/users/ananya-jain.15bb2b79/badges" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          <span>Verify Live on Credly</span>
+          <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+        </a>
+        <button class="btn btn-secondary btn-sm" id="copyCertIdBtn" onclick="copyCertId()">
+          <i data-lucide="copy" style="width: 14px; height: 14px;"></i>
+          <span>Copy ID</span>
+        </button>
+        <button class="btn btn-secondary btn-sm" onclick="closeModal('certModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Resume View & Print Modal -->
+  <div class="modal-overlay" id="resumeModal" onclick="handleBackdropClick(event, 'resumeModal')">
+    <div class="modal-container" style="max-width: 920px;">
+      <button class="modal-close-btn" onclick="closeModal('resumeModal')" aria-label="Close modal">
+        <i data-lucide="x"></i>
+      </button>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.2rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.2rem;">ANANYA JAIN</h3>
+          <div style="font-size: 0.86rem; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center;">
+            <span>+91-7489646191</span>
+            <span>•</span>
+            <a href="mailto:ananyajain729@gmail.com" style="color: inherit; text-decoration: underline;">ananyajain729@gmail.com</a>
+            <span>•</span>
+            <a href="https://www.linkedin.com/in/ananya-jain327/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-rose); text-decoration: underline;">linkedin.com/in/ananya-jain327</a>
+            <span>•</span>
+            <a href="https://github.com/ananyajain327" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">github.com/ananyajain327</a>
+            <span>•</span>
+            <a href="https://leetcode.com/u/ananyajain_3/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">leetcode.com/u/ananyajain_3</a>
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+          <a href="assets/Ananya_Jain_Resume.pdf" download="Ananya_Jain_Resume.pdf" class="btn btn-primary btn-sm" id="modalDownloadPdfBtn" title="Download Official Resume PDF">
+            <i data-lucide="download" style="width: 14px; height: 14px;"></i>
+            <span>Download PDF</span>
+          </a>
+          <a href="assets/Ananya_Jain_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="Open Full PDF in New Tab">
+            <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+            <span>Open PDF</span>
+          </a>
+          <button class="btn btn-secondary btn-sm" onclick="window.print()" title="Print Resume">
+            <i data-lucide="printer" style="width: 14px; height: 14px;"></i>
+            <span>Print</span>
+          </button>
+          <button class="btn btn-secondary btn-sm" onclick="closeModal('resumeModal')">Close</button>
+        </div>
+      </div>
+
+      <!-- View Switcher Tabs -->
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 1.35rem; background: var(--bg-card); padding: 0.35rem; border-radius: var(--radius-full); width: fit-content; border: 1px solid var(--border-subtle);">
+        <button id="tabPdfBtn" class="filter-btn active" onclick="switchResumeTab('pdf')">
+          <i data-lucide="file-text" style="width: 13px; height: 13px; display: inline-block; vertical-align: middle; margin-right: 0.35rem;"></i>Official PDF Document
+        </button>
+        <button id="tabTextBtn" class="filter-btn" onclick="switchResumeTab('text')">
+          <i data-lucide="align-left" style="width: 13px; height: 13px; display: inline-block; vertical-align: middle; margin-right: 0.35rem;"></i>Structured Text View
+        </button>
+      </div>
+
+      <!-- Tab 1: Embedded PDF Document -->
+      <div id="resumePdfView" style="display: block; width: 100%; margin-bottom: 1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem; font-size: 0.82rem; color: var(--text-muted);">
+          <span>Official Verified Resume: <strong>Ananya_Jain_Resume.pdf</strong></span>
+          <a href="assets/Ananya_Jain_Resume.pdf" download="Ananya_Jain_Resume.pdf" style="color: var(--accent-rose); font-weight: 600; text-decoration: underline;">Direct Download ↗</a>
+        </div>
+        <div style="width: 100%; height: 74vh; min-height: 560px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-card); background: #525659; box-shadow: var(--shadow-card);">
+          <iframe src="assets/Ananya_Jain_Resume.pdf#view=FitH" style="width: 100%; height: 100%; border: none;" title="Ananya Jain Official Resume PDF"></iframe>
+        </div>
+      </div>
+
+      <!-- Tab 2: Structured Web View (SKILLS UNTOUCHED) -->
+      <div id="resumeTextView" style="display: none; line-height: 1.7; font-size: 0.92rem; color: var(--text-secondary);">
+        <!-- Summary -->
+        <div style="margin-bottom: 1.8rem;">
+          <h4 style="font-family: var(--font-body); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-rose); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem; margin-bottom: 0.6rem;">Career Objective</h4>
+          <p>
+            Aspiring Full Stack Developer with strong foundations in Java, Data Structures & Algorithms, OOP, and SQL. Passionate about building scalable applications and delivering seamless user experiences through frontend and backend technologies.
+          </p>
+        </div>
+
+        <!-- Education -->
+        <div style="margin-bottom: 1.8rem;">
+          <h4 style="font-family: var(--font-body); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-rose); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem; margin-bottom: 0.6rem;">Education</h4>
+          <div style="display: flex; justify-content: space-between; font-weight: 600; color: var(--text-primary);">
+            <span>Bachelor of Technology in Computer Science (CGPA: 9.58)</span>
+            <span>Jul 2023 – Jun 2027</span>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">JECRC University, Jaipur, Rajasthan</div>
+
+          <div style="display: flex; justify-content: space-between; font-weight: 600; color: var(--text-primary);">
+            <span>Senior Secondary (Percentage: 84.6%)</span>
+            <span>2021 – 2022</span>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">Rani Durgawati Senior Secondary, Chhatarpur, Madhya Pradesh</div>
+
+          <div style="display: flex; justify-content: space-between; font-weight: 600; color: var(--text-primary);">
+            <span>Secondary (Percentage: 82.8%)</span>
+            <span>2019 – 2020</span>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Maharishi Vidya Mandir, Chhatarpur, Madhya Pradesh</div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div style="margin-bottom: 1.8rem;">
+          <h4 style="font-family: var(--font-body); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-rose); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem; margin-bottom: 0.6rem;">Technical & Core Skills</h4>
+          <p><strong>Languages:</strong> Java, C++, JavaScript, SQL</p>
+          <p><strong>Frontend:</strong> HTML5, CSS3, React, Next.js</p>
+          <p><strong>Backend:</strong> JSP, Servlets, REST APIs, JWT</p>
+          <p><strong>Database:</strong> MySQL, JDBC, SQL</p>
+          <p><strong>Core CS:</strong> DSA, OOP, DBMS, OS, Computer Networks</p>
+          <p><strong>Tools:</strong> Git, GitHub, VS Code, Postman</p>
+          <p><strong>Platforms:</strong> ServiceNow, Google Cloud, HPE Networking, Junos</p>
+          <p><strong>Soft Skills:</strong> Problem Solving, Communication Skills, Leadership, Team Collaboration</p>
+        </div>
+
+        <!-- Projects -->
+        <div style="margin-bottom: 1.8rem;">
+          <h4 style="font-family: var(--font-body); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-rose); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem; margin-bottom: 0.6rem;">Key Engineering Projects</h4>
+          
+          <div>
+            <div style="font-weight: 600; color: var(--text-primary); display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+              <span>Commuto — Smart Ride Sharing & Commuting Platform (Live Production)</span>
+              <span style="font-family: var(--font-mono); font-size: 0.82rem;"><a href="https://commuto-iota.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-rose); text-decoration: underline;">commuto-iota.vercel.app ↗</a></span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.35rem;">
+              Tech Stack: Next.js 16, React 19, TypeScript, Spring Boot 3.4, Java 21, PostgreSQL, Tailwind CSS, WebSockets, Razorpay | GitHub: <a href="https://github.com/ananyajain327/Commuto" target="_blank" rel="noopener noreferrer" style="color: var(--accent-rose); text-decoration: underline;">ananyajain327/Commuto</a>
+            </div>
+            <ul style="padding-left: 1.2rem; font-size: 0.88rem;">
+              <li>Architected and deployed an active carpooling platform for students and workplace commuters to cut travel costs and split fuel expenses.</li>
+              <li>Engineered verified authentication, automated route pairing, and women-only ride preference matching with 1-touch emergency SOS panic dispatch.</li>
+              <li>Integrated Leaflet maps for route visualization and Spring STOMP WebSockets for live driver GPS coordinate telemetry and in-app chatrooms.</li>
+              <li>Implemented in-app wallet balance management with Razorpay payment checkout for instant fare settlement with ₹0 commission fee.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div style="margin-bottom: 1.8rem;">
+          <h4 style="font-family: var(--font-body); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-rose); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem; margin-bottom: 0.6rem;">Trainings & Certifications</h4>
+          <p>• <strong>Juniper Networks Certified Associate, Junos (JNCIA-Junos)</strong> [Sep 2026 – Credly Verified]</p>
+          <p>• <strong>ServiceNow Certified System Administrator (CSA)</strong> [Mar 2026 – Credly Verified]</p>
+          <p>• <strong>ServiceNow Certified Application Developer (CAD)</strong> [May 2026 – Credly Verified]</p>
+          <p>• <strong>Google Cloud Engineering Certificate</strong> [Nov 2025 – Credly Verified]</p>
+          <p>• <strong>ServiceNow Platform Training</strong> (Workflows, automation, incident management - Jan 2026 – Feb 2026)</p>
+        </div>
+
+        <!-- Position of Responsibility -->
+        <div>
+          <h4 style="font-family: var(--font-body); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-rose); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem; margin-bottom: 0.6rem;">Position of Responsibility</h4>
+          <div style="display: flex; justify-content: space-between; font-weight: 600; color: var(--text-primary);">
+            <span>Class Representative | JECRC University</span>
+            <span>Jul 2023 – Present</span>
+          </div>
+          <p style="font-size: 0.88rem;">
+            Represented and coordinated a class of 60+ students as the primary liaison between faculty and students, managing academic communication and ensuring smooth semester workflows.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Core Application Scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>
