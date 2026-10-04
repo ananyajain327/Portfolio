@@ -1,4 +1,25 @@
 {
+  "name": "ananya-jain-portfolio",
+  "version": "1.0.0",
+  "description": "Personal Portfolio & Full-Stack Software Engineering Showcase of Ananya Jain",
+  "main": "index.html",
+  "scripts": {
+    "start": "node serve.js",
+    "dev": "node serve.js"
+  },
+  "keywords": [
+    "portfolio",
+    "developer",
+    "full-stack",
+    "java",
+    "react",
+    "nextjs",
+    "servicenow",
+    "junos",
+    "ananya-jain"
+  ],
+  "author": "Ananya Jain",
+  "license": "MIT",
   "dependencies": {
     "@huggingface/transformers": "^4.3.0",
     "@img/sharp-win32-x64": "^0.35.5",
