@@ -343,7 +343,7 @@ function showToast(message, iconName = 'sparkles') {
 }
 
 /* --- Contact Form Submission Handler --- */
-function handleContactSubmit(event) {
+async function handleContactSubmit(event) {
   event.preventDefault();
 
   const name = document.getElementById('contactName').value.trim();
@@ -365,32 +365,83 @@ function handleContactSubmit(event) {
   `;
   btn.disabled = true;
 
-  // Prepare mailto link as direct action
-  const mailtoBody = encodeURIComponent(
-    `Hello Ananya,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-  );
-  const mailtoSubject = encodeURIComponent(`[Portfolio Inquiry] ${subject}`);
-  const mailtoUrl = `mailto:ananyajain729@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+  const mailSubject = subject ? `[Portfolio Message] ${subject}` : `[Portfolio Message] New inquiry from ${name}`;
+  const mailBody = `Hello Ananya,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
 
-  setTimeout(() => {
+  // Helper to open Gmail Web Compose fallback
+  const openGmailFallback = () => {
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=ananyajain729@gmail.com&su=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+    window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  try {
+    const response = await fetch('https://formsubmit.co/ajax/ananyajain729@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        _subject: mailSubject,
+        message: message,
+        _captcha: 'false',
+        _template: 'table'
+      })
+    });
+
+    const data = await response.json();
+
+    if (data.success === 'true' || data.success === true) {
+      btn.innerHTML = `
+        <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+        <span>Message Sent Directly!</span>
+      `;
+      initLucideIcons();
+
+      showToast(`Thank you, ${name}! Your message was delivered straight to Ananya's inbox.`, 'check');
+      document.getElementById('contactForm').reset();
+    } else if (data.message && data.message.includes('Activation')) {
+      // First-time activation pending
+      btn.innerHTML = `
+        <i data-lucide="mail" style="width: 16px; height: 16px;"></i>
+        <span>Opening Gmail...</span>
+      `;
+      initLucideIcons();
+
+      showToast("Activation link sent to Ananya's Gmail! Opening web compose backup...", 'send');
+      openGmailFallback();
+      document.getElementById('contactForm').reset();
+    } else {
+      // Fallback to Gmail Web Compose
+      btn.innerHTML = `
+        <i data-lucide="mail" style="width: 16px; height: 16px;"></i>
+        <span>Opening Gmail...</span>
+      `;
+      initLucideIcons();
+
+      showToast('Opening Gmail web compose to ensure delivery...', 'send');
+      openGmailFallback();
+      document.getElementById('contactForm').reset();
+    }
+  } catch (error) {
+    console.error('Contact submission fallback:', error);
     btn.innerHTML = `
-      <i data-lucide="check" style="width: 16px; height: 16px;"></i>
-      <span>Message Ready!</span>
+      <i data-lucide="mail" style="width: 16px; height: 16px;"></i>
+      <span>Opening Gmail...</span>
     `;
     initLucideIcons();
 
-    showToast('Thank you, ' + name + '! Launching your email client...', 'send');
-
-    // Launch email client
-    window.location.href = mailtoUrl;
-
+    showToast('Redirecting to Gmail compose in browser...', 'send');
+    openGmailFallback();
+  } finally {
     setTimeout(() => {
       btn.innerHTML = originalText;
       btn.disabled = false;
-      document.getElementById('contactForm').reset();
       initLucideIcons();
-    }, 2000);
-  }, 900);
+    }, 3500);
+  }
 }
 
 /* --- Resume Modal Tab Switcher --- */
