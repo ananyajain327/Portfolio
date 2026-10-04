@@ -155,6 +155,15 @@ function initMobileMenu() {
         initLucideIcons();
       });
     });
+
+    // Close when clicking outside of nav menu
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        navMenu.classList.remove('open');
+        menuBtn.innerHTML = '<i data-lucide="menu"></i>';
+        initLucideIcons();
+      }
+    });
   }
 }
 

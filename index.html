@@ -41,6 +41,12 @@
           <li><a href="#certifications" class="nav-link">Certifications</a></li>
           <li><a href="#leadership" class="nav-link">Leadership</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li class="mobile-resume-link">
+            <button class="btn btn-primary btn-sm" style="width: 100%; margin-top: 0.5rem;" onclick="openResumeModal()">
+              <i data-lucide="file-text" style="width: 15px; height: 15px;"></i>
+              <span>View Resume</span>
+            </button>
+          </li>
         </ul>
       </nav>
 
@@ -714,7 +720,7 @@
       </div>
 
       <!-- Credly Full Profile & Micro-Certifications Banner -->
-      <div style="margin-top: 2.5rem; background: var(--bg-card); padding: 1.8rem 2.2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-card); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.4rem;">
+      <div class="credly-profile-banner">
         <div style="display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;">
           <div style="display: flex; align-items: center;">
             <img src="assets/images/badges/jncia.png" alt="JNCIA" style="width: 36px; height: 36px; object-fit: contain; margin-right: -8px; border-radius: 50%; background: #FFF; padding: 2px; border: 1px solid var(--border-subtle);" title="Juniper JNCIA-Junos">
@@ -867,8 +873,8 @@
             </div>
           </div>
 
-          <div style="padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-            <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+          <div class="contact-card-footer">
+            <div class="contact-resume-actions">
               <a href="assets/Ananya_Jain_Resume.pdf" download="Ananya_Jain_Resume.pdf" class="btn btn-primary btn-sm" title="Download Official Resume PDF">
                 <i data-lucide="download" style="width: 14px; height: 14px;"></i>
                 <span>Download Resume (PDF)</span>
@@ -1007,7 +1013,7 @@
         Commuto connects students and workplace commuters to cut daily travel expenses and highway congestion. The platform integrates end-to-end security, live telemetry, and community trust:
       </p>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+      <div class="modal-features-grid">
         <div style="background: var(--bg-pill); padding: 1.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
           <div style="font-weight: 600; font-size: 0.92rem; margin-bottom: 0.4rem; color: var(--text-primary);"><i data-lucide="shield-alert" style="width: 15px; height: 15px; display: inline-block; vertical-align: middle; color: var(--accent-rose); margin-right: 0.35rem;"></i>Women-Only Pooling Option</div>
           <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.55;">
@@ -1133,7 +1139,7 @@
             <a href="https://leetcode.com/u/ananyajain_3/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">leetcode.com/u/ananyajain_3</a>
           </div>
         </div>
-        <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+        <div class="modal-header-actions">
           <a href="assets/Ananya_Jain_Resume.pdf" download="Ananya_Jain_Resume.pdf" class="btn btn-primary btn-sm" id="modalDownloadPdfBtn" title="Download Official Resume PDF">
             <i data-lucide="download" style="width: 14px; height: 14px;"></i>
             <span>Download PDF</span>

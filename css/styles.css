@@ -501,10 +501,14 @@ h1, h2, h3, h4, .font-serif {
   padding-left: 0.65rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .brand-title {
     display: none;
   }
+}
+
+.mobile-resume-link {
+  display: none;
 }
 
 .nav-menu {
@@ -520,22 +524,69 @@ h1, h2, h3, h4, .font-serif {
 }
 
 @media (max-width: 900px) {
+  .mobile-resume-link {
+    display: block;
+    width: 100%;
+  }
+
   .nav-menu {
     position: fixed;
     top: 70px;
-    left: 1.5rem;
-    right: 1.5rem;
+    left: 1rem;
+    right: 1rem;
     flex-direction: column;
-    padding: 1.8rem;
-    gap: 1.2rem;
+    padding: 1.5rem 1.25rem;
+    gap: 0.75rem;
     border-radius: var(--radius-lg);
     background: var(--bg-card-solid);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-card);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.25);
     display: none;
+    z-index: 1000;
   }
 
   .nav-menu.open {
     display: flex;
+    animation: menuSlideDown 0.25s var(--ease-chic) forwards;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border-radius: var(--radius-sm);
+    display: block;
+    font-size: 0.95rem;
+  }
+
+  .nav-link.active::after {
+    display: none;
+  }
+
+  .nav-link.active {
+    background: var(--accent-rose-light);
+    color: var(--accent-rose);
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 540px) {
+  #navResumeBtn {
+    display: none;
+  }
+  .theme-toggle-btn, .mobile-menu-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@keyframes menuSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -785,25 +836,54 @@ h1, h2, h3, h4, .font-serif {
 }
 
 .badge-top-left {
-  top: 5%;
-  left: -10%;
+  top: 8%;
+  left: -5%;
   animation-delay: 0s;
 }
 
 .badge-bottom-right {
-  bottom: 5%;
-  right: -8%;
+  bottom: 8%;
+  right: -5%;
   animation-delay: 2.5s;
 }
 
-@media (max-width: 580px) {
+@media (max-width: 960px) {
+  .badge-top-left {
+    left: 2%;
+    top: 4%;
+  }
+  .badge-bottom-right {
+    right: 2%;
+    bottom: 4%;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    width: 100%;
+  }
+  .hero-portrait-frame {
+    order: 1;
+    max-width: 250px;
+    width: 85%;
+  }
   .hero-floating-badge {
     position: static;
-    margin-top: 1rem;
     animation: none;
+    width: 100%;
+    max-width: 280px;
+    margin: 0;
+    justify-content: flex-start;
   }
-  .hero-visual {
-    flex-direction: column;
+  .badge-top-left {
+    order: 2;
+  }
+  .badge-bottom-right {
+    order: 3;
   }
 }
 
@@ -2026,6 +2106,364 @@ h1, h2, h3, h4, .font-serif {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ===================================================================
+   RESPONSIVE DESIGN & MOBILE OVERHAUL (320px – 992px)
+   =================================================================== */
+
+/* Tablet & Smaller Desktops (< 992px) */
+@media (max-width: 992px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  .hero-section {
+    padding-top: 7.5rem;
+    padding-bottom: 4rem;
+    min-height: auto;
+  }
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Tablets & Large Phones (< 768px) */
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+  .section-title {
+    font-size: clamp(1.85rem, 6.5vw, 2.7rem);
+    line-height: 1.2;
+    word-break: break-word;
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  .hero-section {
+    padding-top: 6.5rem;
+    padding-bottom: 3rem;
+  }
+  .hero-headline {
+    font-size: clamp(2rem, 7.5vw, 3rem);
+    line-height: 1.18;
+    word-break: break-word;
+  }
+  .hero-intro {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.8rem;
+  }
+
+  /* Projects Filter Bar - Smooth Horizontal Scrolling */
+  .projects-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .projects-filter-bar {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    scrollbar-width: none;
+    border-radius: var(--radius-md);
+    padding: 0.35rem;
+    gap: 0.4rem;
+  }
+  .projects-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-btn {
+    flex-shrink: 0;
+    padding: 0.42rem 0.95rem;
+    font-size: 0.8rem;
+  }
+
+  /* Editorial Project Card Mobile Layout */
+  .editorial-project-card, 
+  .editorial-project-card.reversed {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1.25rem;
+    gap: 1.8rem;
+    border-radius: var(--radius-lg);
+  }
+  .editorial-project-card.reversed .project-visual-column {
+    order: 2;
+  }
+  .editorial-project-card.reversed .project-content-column {
+    order: 1;
+  }
+  .project-title {
+    font-size: 1.55rem;
+    line-height: 1.25;
+  }
+
+  /* Certifications & Badges */
+  .certifications-timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .cert-card {
+    padding: 1.4rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  /* Credly Banner */
+  .credly-profile-banner {
+    padding: 1.35rem 1.15rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+  }
+  .credly-profile-banner .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Leadership Card */
+  .leadership-editorial-card {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1.25rem;
+    gap: 1.5rem;
+    border-radius: var(--radius-lg);
+  }
+
+  /* Contact Section */
+  .contact-card-editorial,
+  .contact-form-wrapper {
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+  .form-input, .form-textarea {
+    font-size: 16px; /* Prevents auto-zoom in mobile Safari */
+    padding: 0.75rem 1rem;
+  }
+
+  /* Modals */
+  .modal-features-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 3rem 0 2rem;
+  }
+  .footer-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.8rem;
+  }
+  .footer-nav {
+    gap: 0.85rem 1.5rem;
+  }
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+}
+
+/* Standard Smartphones (< 640px) */
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1.15rem;
+  }
+  .section {
+    padding: 3.2rem 0;
+  }
+
+  /* Hero Mobile Portrait & Badges */
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    width: 100%;
+  }
+  .hero-portrait-frame {
+    order: 1;
+    max-width: 250px;
+    width: 82%;
+    border-radius: 20px;
+  }
+  .hero-floating-badge {
+    position: static;
+    animation: none;
+    width: 100%;
+    max-width: 285px;
+    margin: 0;
+    justify-content: flex-start;
+    padding: 0.55rem 0.85rem;
+  }
+  .badge-top-left {
+    order: 2;
+  }
+  .badge-bottom-right {
+    order: 3;
+  }
+
+  /* Hero Status & Headline */
+  .hero-status {
+    white-space: normal;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.85rem;
+    line-height: 1.35;
+    text-align: left;
+  }
+  .hero-headline {
+    font-size: clamp(1.85rem, 8vw, 2.5rem);
+    line-height: 1.18;
+  }
+
+  /* Hero CTAs */
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Hero Socials */
+  .hero-socials {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .social-icons-row {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* Skills Bento */
+  .skills-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+  .skill-category-card {
+    padding: 1.35rem 1.15rem;
+    border-radius: var(--radius-lg);
+  }
+  .skill-interactive-pill {
+    font-size: 0.78rem;
+    padding: 0.38rem 0.75rem;
+  }
+
+  /* Contact Actions */
+  .contact-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+  .contact-resume-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .contact-resume-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .contact-card-footer .social-icons-row {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Contact Form Buttons */
+  #contactForm button[type="submit"],
+  #contactForm button[type="button"] {
+    width: 100%;
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  /* Project Card Actions */
+  .project-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.65rem;
+  }
+  .project-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Modals Overlay & Sizing */
+  .modal-overlay {
+    padding: 0.6rem;
+  }
+  .modal-container {
+    padding: 1.4rem 1.15rem;
+    max-height: 94vh;
+    border-radius: var(--radius-lg);
+  }
+  .modal-close-btn {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 32px;
+    height: 32px;
+  }
+  .modal-header-actions {
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem !important;
+  }
+  .modal-header-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.78rem;
+  }
+
+  /* Toast Notification */
+  .toast-container {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+  }
+  .toast {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.8rem;
+    padding: 0.65rem 1rem;
+  }
+}
+
+/* Compact Smartphones (< 440px) */
+@media (max-width: 440px) {
+  .contact-channel-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .contact-channel-item .channel-action-btn,
+  .contact-channel-item .badge {
+    align-self: flex-start;
+  }
+  .channel-val {
+    font-size: 0.88rem;
+    word-break: break-all;
+  }
+  .hero-metrics-strip {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .bento-mini-card {
+    padding: 1.15rem 1rem;
+  }
+  .academic-item {
+    flex-direction: column;
+    gap: 0.2rem;
   }
 }
 
